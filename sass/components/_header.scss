@@ -1,0 +1,27 @@
+.header {
+  width: 100%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  padding: 20px 0px;
+  background:  get-opacity($color-primary, .8);
+  &-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  h1 {
+    margin: 0;
+    font: $font-title-2;
+    text-shadow: 2px 2px 2px get-opacity($color-dark, .2);
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  a {
+    box-shadow: 2px 2px 2px get-opacity($color-dark, .8);
+  }
+}

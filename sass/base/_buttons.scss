@@ -1,0 +1,18 @@
+.button-danger, .button-success  {
+  padding: 5px 10px;
+  border-radius: 5px;
+  text-decoration: none;
+  background: $color-danger;
+  white-space: nowrap;
+  color: $color-light;
+}
+
+.button-success  {
+  background: $color-success;
+}
+
+.button-danger:hover, .button-success:hover {
+  text-decoration: none;
+  color: $color-light;
+  filter: brightness(1.1);
+}

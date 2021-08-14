@@ -1,0 +1,43 @@
+@function get-opacity($color, $amount) {
+  @return rgba($color, $amount);
+}
+
+
+$color-primary: #ddd72c;
+$color-secondary: rgb(233, 149, 39);
+$color-light: #ffffff;
+$color-dark: #1b1b1a;
+$color-danger: #e61313;
+$color-success: #079887;
+
+$color-primary-2: get-opacity($color-primary, .5);
+
+$letter-1: 'Baloo Tamma 2', cursive;
+
+$font-default: 500 17px $letter-1;
+$font-caption: 17px $letter-1;
+$font-title-1: bold 40px / 40px  $letter-1 ;
+$font-title-2: bold 30px / 30px  $letter-1 ;
+
+body {
+  font: $font-default;
+  color: $color-dark;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0px 20px;
+}
+
+.title {
+  text-align: center;
+  font: $font-title-2;
+  margin: 20px 0px;
+}
+
+.title-description {
+  text-align: center;
+  margin: -20px 0px 20px;
+}
