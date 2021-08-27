@@ -1,6 +1,6 @@
 .button-danger, .button-success  {
   padding: 5px 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   text-decoration: none;
   background: $color-danger;
   white-space: nowrap;
@@ -9,6 +9,7 @@
 
 .button-success  {
   background: $color-success;
+  box-shadow: 1px 1px 1px get-opacity($color-dark, .6);
 }
 
 .button-danger:hover, .button-success:hover {

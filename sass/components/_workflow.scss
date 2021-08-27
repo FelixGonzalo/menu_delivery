@@ -1,8 +1,52 @@
-.workFlow-pay {
-  padding-top: 20px;
-  background: $color-primary-2;
+.workFlow {
+  padding: 20px 0;
+  // background: linear-gradient(to bottom, $color-primary, $color-secondary);
+}
+
+.workFlow-step {
   width: 100%;
+  max-width: 300px;
+  margin: 50px auto;
+  text-align: center;
   img {
     width: 100%;
+  }
+  a {
+    display: block;
+    padding: 20px 0px;
+    font-size: 20px;
+    background: $color-dark;
+  }
+}
+
+.workFlow-pay {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.codigo_QR {
+  border-radius: 5px;
+  max-width: 250px;
+  background: $color-light;
+}
+
+@media screen and (min-width: 768px) {
+  .workFlow {
+    padding: 30px 0 40px;
+  }
+  .workFlow-content {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+}
+
+
+@media screen and (min-width: 1200px) {
+  .workFlow-step {
+    margin: 30px auto;
   }
 }

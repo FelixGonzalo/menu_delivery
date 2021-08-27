@@ -1,0 +1,9 @@
+.customers {
+  padding: 20px 0px;
+}
+
+@media screen and (min-width: 768px) {
+  .customers {
+    padding: 30px 0 70px;
+  }
+}

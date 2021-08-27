@@ -8,7 +8,7 @@ $color-secondary: rgb(233, 149, 39);
 $color-light: #ffffff;
 $color-dark: #1b1b1a;
 $color-danger: #e61313;
-$color-success: #079887;
+$color-success: #079854;
 
 $color-primary-2: get-opacity($color-primary, .5);
 
@@ -16,12 +16,17 @@ $letter-1: 'Baloo Tamma 2', cursive;
 
 $font-default: 500 17px $letter-1;
 $font-caption: 17px $letter-1;
-$font-title-1: bold 40px / 40px  $letter-1 ;
+$font-title-1: bold 35px / 35px  $letter-1 ;
 $font-title-2: bold 30px / 30px  $letter-1 ;
+$font-title-3: bold 23px / 23px  $letter-1 ;
+$font-title-4: bold 17px / 17px  $letter-1 ;
 
 body {
   font: $font-default;
   color: $color-dark;
+  scroll-behavior: smooth;
+  background: $color-primary-2;
+  background: linear-gradient(to bottom, $color-secondary, $color-primary);
 }
 
 .wrapper {
@@ -41,3 +46,16 @@ body {
   text-align: center;
   margin: -20px 0px 20px;
 }
+
+.subtitle {
+  text-align: center;
+  font: $font-title-3;
+  margin: 20px 0px;
+}
+
+.subtitle-2 {
+  text-align: center;
+  font: $font-title-4;
+  margin: 20px 0px;
+}
+
