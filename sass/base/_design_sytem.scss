@@ -59,3 +59,15 @@ body {
   margin: 20px 0px;
 }
 
+.message {
+  background: $color-danger;
+  color: $color-light;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 100px 0px;
+  span {
+    font-size: 15px;
+    color: get-opacity($color-light, 0.9 );
+  }
+}

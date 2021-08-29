@@ -493,6 +493,19 @@ body {
   margin: 20px 0px;
 }
 
+.message {
+  background: #e61313;
+  color: #ffffff;
+  text-align: center;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 100px 0px;
+}
+.message span {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
 .button-danger, .button-success {
   padding: 5px 10px;
   border-radius: 10px;
