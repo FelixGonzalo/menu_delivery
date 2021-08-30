@@ -34,7 +34,7 @@
   <main>
     <section class="menu" id="menu">
       <h2 class="title">Menu <i class="fas fa-utensils"></i> express</h2>
-      <p class="title-description">Consulte pedidos por WhatsApp</p>
+      <p class="title-description" id="menu_description">Consulte pedidos por WhatsApp</p>
       <div class="menu-content wrapper" id="menu_platos">
         <div class="plate">
           <img src="https://jameaperu.com/wp-content/uploads/2019/09/chicharron-de-pescado_700x467.jpg" alt="">
@@ -110,13 +110,16 @@
 
     const menu_platos = document.getElementById("menu_platos")
     const workFlow = document.getElementById("workFlow")
+    const menu_description = document.getElementById("menu_description")
+
     menu_platos.innerHTML = ""
 
     db.collection("negocios").doc("negocio1")
       .get().then((doc) => {
         if (doc.exists) {
           if (doc.data().show) {
-            // si esta abierto entonces mostramos los platos
+            // si esta abierto entonces mostramos el message del negocio y los platos
+            menu_description.innerHTML = doc.data().message
             db.collection("platos").where("show", "==", true)
               .get()
               .then((querySnapshot) => {
