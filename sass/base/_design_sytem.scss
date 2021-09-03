@@ -71,3 +71,9 @@ body {
     color: get-opacity($color-light, 0.9 );
   }
 }
+
+.loading {
+  width: 80px;
+  display: block;
+  margin: 150px auto;
+}

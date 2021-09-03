@@ -36,7 +36,8 @@
       <h2 class="title">Menu <i class="fas fa-utensils"></i> express</h2>
       <p class="title-description" id="menu_description">Consulte pedidos por WhatsApp</p>
       <div class="menu-content wrapper" id="menu_platos">
-        <div class="plate">
+        <img src="img/loading.gif" alt="" class="loading">
+        <!-- <div class="plate">
           <img src="https://jameaperu.com/wp-content/uploads/2019/09/chicharron-de-pescado_700x467.jpg" alt="">
           <div class="plate-info">
             <div class="plate-info-header">
@@ -44,10 +45,10 @@
               <span class="plate-price">10.00</span>
             </div>
           </div>
-        </div>
+        </div> -->
       </div>
     </section>
-    <section class="workFlow" id="workFlow">
+    <section class="workFlow" id="workFlow" style="display:none">
       <h2 class="title">Realiza <i class="fas fa-archive"></i> tu pedido</h2>
       <p class="title-description">En tres sencillos pasos</p>
       <div class="workFlow-content wrapper">
@@ -83,7 +84,7 @@
   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
-  <script type="module">
+  <script>
     // Import the functions you need from the SDKs you need
     //import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
     // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-analytics.js";
@@ -103,56 +104,7 @@
       measurementId: "G-4JRG1DYNQ1"
     };
     firebase.initializeApp(firebaseConfig);
-    var db = firebase.firestore();
-    var platos = db.collection("platos");
-    console.log(platos)
-
-
-    const menu_platos = document.getElementById("menu_platos")
-    const workFlow = document.getElementById("workFlow")
-    const menu_description = document.getElementById("menu_description")
-
-    menu_platos.innerHTML = ""
-
-    db.collection("negocios").doc("negocio1")
-      .get().then((doc) => {
-        if (doc.exists) {
-          if (doc.data().show) {
-            // si esta abierto entonces mostramos el message del negocio y los platos
-            menu_description.innerHTML = doc.data().message
-            db.collection("platos").where("show", "==", true)
-              .get()
-              .then((querySnapshot) => {
-                querySnapshot.forEach((doc) => {
-                  menu_platos.innerHTML += `
-                  <div class="plate ${doc.data().state ? '' : 'plate-agotado'}">
-                    <img src="${doc.data().image}" alt="">
-                    <div class="plate-info">
-                      <div class="plate-info-header">
-                        <p class="plate-name">${doc.data().name}</p>
-                        <span class="plate-price">${doc.data().price}</span>
-                      </div>
-                    </div>
-                  </div>
-                `
-                });
-              })
-              .catch((error) => {
-                console.log("Error getting documents: ", error);
-              });
-          } else {
-            menu_platos.innerHTML = `<p class="message"><i class="fas fa-store-slash"></i> <br>${doc.data().message}
-              <br><br>
-              <a href="https://api.whatsapp.com/send?phone=51968679393" class="button-success" target="_blank" rel="noopener noreferrer"><i class="fab fa-whatsapp"></i> Reservar menu</a>
-              <br><br>
-              <span>Gracias por su preferencia</span></p>`
-            workFlow.innerHTML = ""
-          }
-        }
-      }).catch((error) => {
-        console.log("Error getting document:", error);
-      });
-
   </script>
+  <script src="js/app.js"></script>
 </body>
 </html>
