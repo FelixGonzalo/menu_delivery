@@ -1,0 +1,20 @@
+.admin {
+  padding: 120px 0 20px;
+  margin: 0 20px;
+}
+
+.admin-content {
+  padding: 20px 0;
+  border-radius: 10px;
+  background: get-opacity($color-light, .5);
+}
+
+@media screen and (min-width: 768px) {
+  .admin-options {
+    display: flex;
+    justify-content: space-evenly;
+  }
+  .admin-content {
+    padding: 20px 0 40px;
+  }
+}

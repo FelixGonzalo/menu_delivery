@@ -1,0 +1,53 @@
+.form-login {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 20px 20px;
+  label {
+    margin: 0;
+  }
+  input {
+    border: 1px solid get-opacity($color-dark, .5);;
+    padding: 5px 10px;
+    border-radius: 5px;
+    outline: none;
+    font-family: $letter-1;
+    margin-bottom: 10px;
+  }
+  button {
+    outline: none;
+    margin-top: 10px;
+    padding: 15px 0px;
+  }
+  a {
+    color: get-opacity($color-dark, .5);
+    text-align: center;
+    margin: 15px 0px 0px;
+  }
+}
+
+.form-admin {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 0 20px 20px;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  label {
+    margin: 0;
+  }
+  input {
+    border: none;
+    border-bottom: 1px solid get-opacity($color-dark, .5);
+    padding: 0px 5px;
+    outline: none;
+    font-family: $letter-1;
+    margin-bottom: 10px;
+    background: none;
+  }
+  button {
+    margin-top: 10px;
+    padding: 10px 0px;
+  }
+}

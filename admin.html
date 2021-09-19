@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+Tamma+2:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/index.css">
+  <title>Menu Express | Admin</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-content wrapper">
+      <h1>Menu Express</h1>
+      <nav>
+        <ul>
+          <li>
+            <button class="button-danger" id="btn_salir">Cerrar sesión</button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <main>
+    <section class="admin">
+      <div class="admin-content wrapper">
+        <h2 class="title">Panel <i class="fas fa-utensils"></i> de Administración</h2>
+        <p class="title-description" id="menu_description">Menu express</p>
+        <div class="admin-options">
+          <div>
+            <hr>
+            <h3 class="subtitle-2">EDITA DATOS DEL NEGOCIO</h3>
+            <form id="form_negocio" class="form-admin">
+              <label for="message">Mensaje:</label>
+              <input type="text" id="message" name="message">
+              <div>
+                <input type="radio" name="state" value="true" id="open"> <label for="open">Negocio Abierto</label>
+              </div>
+              <div>
+                <input type="radio" name="state" value="false" id="closed"> <label for="closed">Negocio Cerrado</label>
+              </div>
+              <button class="button-success">Guardar</button>
+            </form>
+            <hr>
+            <h3 class="subtitle-2">EDITA O AGREGA UN PLATO</h3>
+            <form class="form-admin" id="form_plato">
+              <input type="hidden" id="key" name="key" value="agregar">
+              <label for="name">Nombre:</label>
+              <input type="text" id="name" name="name">
+              <label for="price">Precio:</label>
+              <input type="text" id="price" name="price">
+              <label for="price">Imagen:</label>
+              <input type="text" id="image" name="image">
+              <label>Visualizar el plato:</label>
+              <div>
+                <input type="radio" name="show" value="true" id="ver"> <label for="ver">Ver plato</label>
+              </div>
+              <div>
+                <input type="radio" name="show" value="false" id="ocultar"> <label for="ocultar">Ocultar Plato</label>
+              </div>
+              <label>Colocar el plato como agotado:</label>
+              <div>
+                <input type="radio" name="statePlate" value="true" id="noagotado"> <label for="noagotado">Plato no agotado</label>
+              </div>
+              <div>
+                <input type="radio" name="statePlate" value="false" id="agotado"> <label for="agotado">Plato Agotado</label>
+              </div>
+              <button class="button-success" id="btn_plato">Guardar</button>
+            </form>
+          </div>
+          <div>
+            <hr>
+            <h3 class="subtitle-2">MENU</h3>
+            <div id="menu_platos">
+              <img src="img/loading.gif" alt="" class="loading">
+              <!-- lista de platos -->
+            </div>
+          </div>
+        </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <h2>Menu Express</h2>
+    <p class="footer-message"><i class="fas fa-utensils"></i> Gracias por su preferencia</p>
+    <p class="footer-Copyright">Copyright © Menu Nuevo Chimbote. All Rights Reserved.</p>
+  </footer>
+
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-auth.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/admin.js"></script>
+</body>
+</html>

@@ -21,10 +21,14 @@ $font-title-2: bold 30px / 30px  $letter-1 ;
 $font-title-3: bold 23px / 23px  $letter-1 ;
 $font-title-4: bold 17px / 17px  $letter-1 ;
 
+html {
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
 body {
   font: $font-default;
   color: $color-dark;
-  scroll-behavior: smooth;
   background: $color-primary-2;
   background: linear-gradient(to bottom, $color-secondary, $color-primary);
 }

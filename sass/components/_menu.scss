@@ -47,6 +47,55 @@
   }
 }
 
+
+.plate-small {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  margin-bottom: 5px;
+  padding: 0px 5px 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid get-opacity($color-dark, .4);
+  position: relative;
+  cursor: pointer;
+  &-info {
+    display: flex;
+    align-items:center;
+    gap: 5px;
+  }
+  img {
+    width: 80px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+
+  &-name {
+    font-weight: bold;
+    margin: 0px;
+  }
+  &-price {
+    margin: 0;
+    color: $color-danger;
+  }
+  &-price::before {
+    content: "S/";
+    margin-right: 2px;
+  }
+  &-options {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 130px;
+  }
+  button {
+    padding: 10px 0px;
+    outline: none;
+  }
+}
+
 .plate-agotado::after {
     content: "Agotado";
     width: 100%;
@@ -65,6 +114,26 @@
     border: 5px solid $color-dark;
 }
 
+.plate-small-agotado::after {
+    content: "AGOTADO";
+    width: 85px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    z-index: 21;
+    top: 0;
+    left: 0;
+    font-weight: bold;
+    color: $color-dark;
+    background: get-opacity($color-primary, 0.5);
+}
+
+.plate-oculto {
+  opacity: 0.6;
+  filter: grayscale(100%);
+}
 
 
 @media screen and (min-width: 768px) {

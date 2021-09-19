@@ -11,11 +11,16 @@
   img {
     width: 100%;
   }
-  a {
+  a, button {
+    width: 100%;
+    border: none;
     display: block;
     padding: 20px 0px;
     font-size: 20px;
     background: $color-dark;
+    font: $font-default;
+    outline: none;
+    cursor: pointer;
   }
 }
 
