@@ -1,6 +1,8 @@
+const urlPrincipal = "/menu_delivery/"
+
 firebase.auth().onAuthStateChanged( user => {
   if (user) {
-    window.location.href = '/admin.html';
+    window.location.href = urlPrincipal + 'admin.html';
     var uid = user.uid;
   } else {
     console.log("no existe user")
