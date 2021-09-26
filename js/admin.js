@@ -5,7 +5,7 @@ firebase.auth().onAuthStateChanged(user => {
     //console.log("existe user")
     getDataNegocio()
   } else {
-    window.location.href = '/login.html';
+    window.location.href = 'login.html';
   }
 });
 
@@ -13,7 +13,7 @@ const btn_salir = document.getElementById('btn_salir')
 
 btn_salir.addEventListener('click', () => {
   firebase.auth().signOut().then(() => {
-    window.location.href = '/login.html';
+    window.location.href = 'login.html';
   }).catch((error) => {
     alert("No se pudo cerra la sesión !!")
   });
